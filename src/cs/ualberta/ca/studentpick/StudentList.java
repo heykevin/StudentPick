@@ -1,0 +1,27 @@
+package cs.ualberta.ca.studentpick;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class StudentList {
+	protected ArrayList<Student> studentList;
+
+	public StudentList() {
+		studentList = new ArrayList<Student>();
+	}
+
+	public Collection<Student> getStudents() {
+
+		return studentList;
+	}
+
+	public void addStudent(Student testStudent) {
+		studentList.add(testStudent);
+
+	}
+
+	public void removeStudent(Student testStudent) {
+		studentList.remove(testStudent);
+	}
+
+}
