@@ -24,9 +24,22 @@ public class StudentList {
 		studentList.remove(testStudent);
 	}
 
-	public Student chooseStudent() {
+	public Student chooseStudent() throws EmptyStudentListException {
+		int size = studentList.size();
+		if (size <= 0){
+			throw new EmptyStudentListException();
+		}
 		int index = (int) (studentList.size() * Math.random());
 		return studentList.get(index);
 	}
 
+	public int size() {
+		// TODO Auto-generated method stub
+		return studentList.size();
+	}
+
+	public boolean contains(Student testStudent) {
+		// TODO Auto-generated method stub
+		return studentList.contains(testStudent);
+	}
 }

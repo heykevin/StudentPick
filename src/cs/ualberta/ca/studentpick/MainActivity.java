@@ -1,9 +1,11 @@
 package cs.ualberta.ca.studentpick;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -30,5 +32,15 @@ public class MainActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	public void editStudents(MenuItem menu){
+		Toast.makeText(this, "Edit Students", Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(MainActivity.this, ListStudentsActivity.class);
+		startActivity(intent);
+	}
+	public void bulkImport(MenuItem menu){
+		Toast.makeText(this, "Bulk Import", Toast.LENGTH_SHORT).show();
+		Intent intent = new Intent(MainActivity.this, BulkImportActivity.class);
+		startActivity(intent);
 	}
 }
