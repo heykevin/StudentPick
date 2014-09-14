@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class BulkImportActivity extends Activity {
 
@@ -30,5 +33,15 @@ public class BulkImportActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	public void addStudentsAction(View v){
+		EditText view = (EditText) findViewById(R.id.bulkStudentText);
+		//capturing the text from edittext - sending it to a character sequence
+		String text = view.getText().toString();
+		StudentListController st = new StudentListController();
+		st.bulkImport(text);
+		view.setText("");
+		Toast.makeText(this, "THanks for the STudents", Toast.LENGTH_SHORT).show();
 	}
 }

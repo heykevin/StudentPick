@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class ListStudentsActivity extends Activity {
 
@@ -31,4 +34,11 @@ public class ListStudentsActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	public void addStudentAction(View V){
+		Toast.makeText(this, "Adding a Student!", Toast.LENGTH_SHORT).show();
+		StudentListController st = new StudentListController();
+		EditText textView = (EditText) findViewById(R.id.addStudentNameText);
+		st.addStudent(new Student(textView.getText().toString()));
+	}
+	
 }

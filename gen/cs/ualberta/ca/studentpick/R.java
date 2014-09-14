@@ -28,13 +28,13 @@ public final class R {
         public static final int action_settings=0x7f080007;
         public static final int addBulkButton=0x7f080003;
         public static final int addStudentButton=0x7f080004;
-        public static final int addStudentName=0x7f080005;
+        public static final int addStudentNameText=0x7f080005;
         public static final int bulkImportItem=0x7f080009;
         public static final int bulkStudentText=0x7f080002;
-        public static final int chooseStudent=0x7f080000;
         public static final int chooseStudentButton=0x7f080001;
+        public static final int chooseStudentTextView=0x7f080000;
         public static final int editStudentsItems=0x7f080008;
-        public static final int listView1=0x7f080006;
+        public static final int studentListView=0x7f080006;
     }
     public static final class layout {
         public static final int activity_bulk_import=0x7f030000;
