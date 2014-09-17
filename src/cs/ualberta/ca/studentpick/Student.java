@@ -11,5 +11,8 @@ public class Student {
 		// TODO Auto-generated method stub
 		return this.studentName;
 	}
+	public String toString(){
+		return getName();
+	}
 
 }

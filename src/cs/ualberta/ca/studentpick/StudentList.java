@@ -5,9 +5,11 @@ import java.util.Collection;
 
 public class StudentList {
 	protected ArrayList<Student> studentList;
+	protected ArrayList<Listener> listeners;
 
 	public StudentList() {
 		studentList = new ArrayList<Student>();
+		listeners = new ArrayList<Listener>();
 	}
 
 	public Collection<Student> getStudents() {
@@ -17,6 +19,8 @@ public class StudentList {
 
 	public void addStudent(Student testStudent) {
 		studentList.add(testStudent);
+		//when adding student  notify everything is changed
+		notifyListeners();
 
 	}
 
@@ -42,4 +46,17 @@ public class StudentList {
 		// TODO Auto-generated method stub
 		return studentList.contains(testStudent);
 	}
+	public void notifyListeners(){
+		for (Listener listener : listeners){
+			listener.update();
+		}
+		
+	}
+	public void addListener (Listener L){
+		listeners.add(L);
+	}
+	public void removeListener(Listener l){
+		listeners.remove(l);
+	}
+	
 }
